@@ -6,7 +6,7 @@ import android.view.SurfaceHolder;
 /**
  * Created by zhangjian on 2015/5/3.
  */
-class ShapeThread extends Thread {
+public class ShapeThread extends Thread {
     private SurfaceHolder mSurfaceHolder;
     private ShapeView mShapeView;
     private boolean mRun = false;

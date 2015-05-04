@@ -6,7 +6,9 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Vibrator;
 
 
 public class BouncingBallActivity extends Activity implements SensorEventListener{
@@ -14,6 +16,8 @@ public class BouncingBallActivity extends Activity implements SensorEventListene
     // sensor-related
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
+    private Vibrator mVibrator;
+    private MediaPlayer[] mps = new MediaPlayer[8];
 
     // animated view
     private ShapeView mShapeView;
@@ -36,8 +40,19 @@ public class BouncingBallActivity extends Activity implements SensorEventListene
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
+        mVibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+
         mShapeView = new ShapeView(this);
         setContentView(mShapeView);
+
+        mps[0] = MediaPlayer.create(this,R.raw.dtmf0);
+        mps[1] = MediaPlayer.create(this,R.raw.dtmf1);
+        mps[2] = MediaPlayer.create(this,R.raw.dtmf2);
+        mps[3] = MediaPlayer.create(this,R.raw.dtmf3);
+        mps[4] = MediaPlayer.create(this,R.raw.dtmf4);
+        mps[5] = MediaPlayer.create(this,R.raw.dtmf5);
+        mps[6] = MediaPlayer.create(this,R.raw.dtmf6);
+        mps[7] = MediaPlayer.create(this,R.raw.dtmf7);
     }
 
     @Override
@@ -88,4 +103,11 @@ public class BouncingBallActivity extends Activity implements SensorEventListene
     public float get_mAx(){return mAx;}
 
     public float get_mAy(){return mAy;}
+
+    public void vibrate(int m){mVibrator.vibrate(m);}
+
+    public void play_tones(int i){
+        mps[i].seekTo(0);
+        mps[i].start();
+    }
 }
