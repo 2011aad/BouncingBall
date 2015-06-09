@@ -28,7 +28,6 @@ public class BouncingBallActivity extends Activity implements SensorEventListene
     private float mAx; // acceleration along x axis
     private float mAy; // acceleration along y axis
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,4 +109,6 @@ public class BouncingBallActivity extends Activity implements SensorEventListene
         mps[i].seekTo(0);
         mps[i].start();
     }
+
+
 }

@@ -9,4 +9,5 @@
     <color name="ball_color6">#3333cc</color>
     <color name="ball_color7">#6600ff</color>
     <color name="background_color">#64ff8000</color>
+    <color name="brick_color">#cc996600</color>
 </resources>
