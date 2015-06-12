@@ -76,7 +76,7 @@ public class ShapeView extends SurfaceView implements SurfaceHolder.Callback{
                     brick_Xcenter[i]+brick_width/2, brick_Ycenter[i]+brick_height/2);
         }
         slide_brick = new RectF();
-        slide_brick_Paint.setColor(getResources().getColor(R.color.brick_color));
+        slide_brick_Paint.setColor(getResources().getColor(R.color.slide_brick_color));
         slide_brick_Paint.setMaskFilter(emboss);
         slide_brick.set(slide_brickX-brick_width/2,slide_brickY-brick_height/2,
                 slide_brickX+brick_width/2,slide_brickY+brick_height/2);

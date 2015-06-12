@@ -10,4 +10,5 @@
     <color name="ball_color7">#6600ff</color>
     <color name="background_color">#64ff8000</color>
     <color name="brick_color">#cc996600</color>
+    <color name="slide_brick_color">#bfbfbf</color>
 </resources>
